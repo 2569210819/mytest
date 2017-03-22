@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app='myapp' ng-controller='ctrl'>
+			<button ng-click='toggle()'>点击切换</button>
+			<div ng-show='flag'>
+				姓： <input type="text" ng-model='xing'/>
+				名： <input type="text" ng-model='ming'/>
+				姓名：<span>{{xing+''+ming}}</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var app=angular.module('myapp',[]);
+			app.controller('ctrl',function($scope){
+				$scope.xing='王';
+				$scope.ming='刚';
+				$scope.flag=false;
+				$scope.toggle=function(){
+					$scope.flag=!$scope.flag
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Echarts</title>
+		<script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#main{
+				width:600px;
+				height:400px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--为echarts  准备 一个 具备大小的 dom-->
+		<div id="main"></div>
+		<script type="text/javascript">
+			//基于准备好的 dom 初始化echarts 实例
+			var myChart = echarts.init(document.getElementById("main"))
+			//指定图表的配置项和数据
+			var option={
+				title:{
+					text:"echarts 入门示例"
+				},
+				tooltip:{},
+				legend:{
+					data:['销量']
+				},
+				xAxis:{
+					data:['衬衫','衬衫','衬衫','衬衫','衬衫','衬衫']
+				},
+				yAxis:{},
+				series:[{
+					name:'销量',
+					type:'bar',
+					data:[5,10,20,29,10,10]
+				}]
+			}
+			//使用刚指定的配置项和数据显示图表
+			myChart.setOption(option)
+			
+		</script>
+	</body>
+</html>

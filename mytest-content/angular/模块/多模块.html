@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="app1" ng-app="MyModule1">
+			<div ng-controller="ctrl1">
+             <p ng-bind="name"></p>
+			</div>
+		</div>
+		<div id="app2" ng-app="MyModule2">
+			<div ng-controller="ctrl2">
+             <p ng-bind="greeting"></p>
+			</div>
+		</div>
+		<script>
+			var myModule1 = angular.module('MyModule1', []);
+			myModule1.controller('ctrl1', ['$scope', function($scope) {
+				$scope.name = 'alex';
+			}]);
+
+			var myModule2 = angular.module('MyModule2', []);
+			myModule2.controller('ctrl2', ['$scope', function($scope) {
+				$scope.greeting = 'hello';
+			}]);
+			angular.element(document).ready(function() {
+				angular.bootstrap(document.getElementById('app2'), ['MyModule2']);
+			});
+		</script>
+	</body>
+
+</html>

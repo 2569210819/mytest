@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app='myapp' ng-controller='ctrl'>
+			first name<br>
+			<input type="text" ng-model='user.name'/><br>
+			last name <br>
+			<input type="text" ng-model='user.age'/><br>
+			<button ng-click='resert()'>重置</button>
+			<p>{{user}}</p>
+			<p>{{name}}</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app=angular.module('myapp',[]);
+		app.controller('ctrl',function($scope){
+			$scope.name={name:'wg',age:'24'};
+		    $scope.resert=function(){
+		    	$scope.user=angular.copy($scope.name)
+		    }
+		    $scope.resert()
+		})
+	</script>
+</html>

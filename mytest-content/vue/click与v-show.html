@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#app1 {
+				cursor: pointer;
+			}
+			
+			#list {
+				width: 400px;
+				height: 400px;
+				background: darkblue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<div id="app1" v-on:click="showhide('willshow')">改变属性的值实现list的展开与收缩</div>
+			<div id="list" v-show="willshow">列表</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: "#app",
+			data: ({
+				willshow: false
+			}),
+			methods: {
+				showhide: function(willshow) {
+					if(this.willshow == false) {
+						this.willshow = true;
+					} else {
+						this.willshow = false;
+					}
+				}
+//				showhide: function(willshow) {
+//					if(app[willshow] == false) {
+//						app[willshow] = true;
+//					} else {
+//						app[willshow] = false;
+//					}
+//				}
+			}
+		})
+		//this.obj和app[obj]一样的
+	</script>
+
+</html>

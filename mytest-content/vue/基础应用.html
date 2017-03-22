@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--小试牛刀-->
+		<div id="app">
+			{{a}}
+		</div>
+		<!--双向绑定数据-->
+		<div id="app2">
+			<p>{{a}}</p>
+			<!--*a可以禁止随着input的改变也改变-->
+			<!--a就是一个模板的变量支持字符链接等简单的表达式-->
+			<input v-model="a" />
+		</div>
+		<!--加载列表-->
+		<ul id="app3">
+			<li v-for="xx in list">
+				{{xx.text}}
+			</li>
+		</ul>
+		<!--循环加载列表-->
+		<ul id="app4">
+			<li v-for="xx in list">
+				{{title}}-{{$index}}-{{xx.text}}
+			</li>
+		</ul>
+		<!--条件判断-->
+		<div id="app5">
+			<template v-if="Math.random()>0.5">
+				<h1>切换多个元素</h1>
+				<p>Paragraph 1</p>
+				<p>Paragraph 2</p>
+			</template>
+		</div>
+		<div id="app6">
+			<div v-if="Math.random()>0.5">
+				切换单个元素
+			</div>
+		</div>
+		<div id="app7">
+			<p>{{message}}</p>
+			<p>{{message | uppercase}}</p>
+			<p>{{message | reverse | uppercase}}</p>
+		</div>
+		<!--v-model 应用在表单中 如select-->
+		<div id="app8">
+			<!--<select v-model="selected" multiple>-->
+			<select v-model="selected">
+				<option selected>A</option>
+				<option>B</option>
+				<option>C</option>
+			</select>
+			<br>
+			<span>{{selected}}</span>
+		</div>
+		<div id="app9">
+			<button v-on:click="doSomething">绑定事件</button>
+		</div>
+		<!--v-bind 绑定属性  -->
+		
+		<div id="app10">
+			<a v-bind:href="url">百度一下</a>
+		</div>
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el: "#app",
+			data: {
+				a: "小试牛刀" //插值法  a对应的是a
+			}
+		})
+		new Vue({
+			el: "#app2",
+			data: {
+				a: "我是数据双向绑定"
+			}
+		})
+		new Vue({
+			el: "#app3",
+			data: {
+				list: [{
+					text: "a"
+				}, {
+					text: "aa"
+				}, {
+					text: "aaa"
+				}]
+			}
+		})
+		new Vue({
+			el: "#app4",
+			data: {
+				title: "这是头部",
+				list: [{
+					text: "b"
+				}, {
+					text: "bb"
+				}, {
+					text: "bb"
+				}]
+			}
+		})
+		new Vue({
+			el: '#app5'
+		})
+		new Vue({
+			el: '#app6'
+		})
+		Vue.filter('reverse', function(value) {
+			return value.split('').reverse().join('')
+		})
+		new Vue({
+			el: '#app7',
+			data: {
+				message: 'www.runoob.com'
+			}
+		})
+		new Vue({
+			el: '#app8'
+		})
+		new Vue({
+			el: '#app9',
+			methods: {
+				doSomething: function() {
+					console.log('ssss')
+				}
+			}
+		})
+		new Vue({
+			el: '#app10',
+			data: {
+				url: "https://www.baidu.com",
+			}	
+		})
+	</script>
+    <script type="text/javascript">
+    </script>
+</html>

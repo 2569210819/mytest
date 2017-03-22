@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 400px;
+				height: 400px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: darkgoldenrod;
+			}
+			
+			#item1 {
+				width: 100px;
+				height: 100px;
+				background: darkblue;
+			}
+			
+			#box2 {
+				width: 400px;
+				height: 400px;
+				background: darkblue;
+				position: relative;
+			}
+			
+			#item2 {
+				width: 100px;
+				height: 100px;
+				background: darkcyan;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -50px;
+				margin-left: -50px;
+			}
+			
+			#box3 {
+				width: 400px;
+				height: 400px;
+				background: darkgreen;
+				position: relative;
+			}
+			
+			#item3 {
+				width: 100px;
+				height: 100px;
+				background: darkmagenta;
+				position: absolute;
+				margin: auto;
+				overflow: auto;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+			
+			#box4 {
+				width: 400px;
+				height: 400px;
+				background: darkgoldenrod;
+				position: relative;
+			}
+			
+			#item4 {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50px, -50px);
+				background: darkcyan;
+			}
+			#box5{width:400px;height:400px;background:darkorange;display: flex;text-align: center;}
+			#item5{width:100px;height:100px;background: darkblue;margin: auto;}
+		</style>
+	</head>
+
+	<body>
+		<!--flex 布局-->
+		<div id="box">
+			<div id="item1">水平居中1</div>
+		</div>
+		<!--绝对定位和负边距-->
+		<div id="box2">
+			<div id="item2">水平居中2</div>
+		</div>
+		<!--绝对定位和0-->
+		<div id="box3">
+			<div id="item3">水平居中3</div>
+		</div>
+		<!--css3 translate-->
+		<div id="box4">
+			<div id="item4">水平居中4</div>
+		</div>
+		<!--display:flex和margin:auto-->
+		<div id="box5">
+			<div id="item5">水平居中5</div>
+		</div>
+	</body>
+
+</html>

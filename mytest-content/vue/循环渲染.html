@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<ul id="app">
+			<li v-for="xx in  list">{{xx.text}}</li>
+		</ul>
+		<ul id="app2">
+			<li v-for="xx in list2">{{xx}}</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: "#app",
+			data: {
+				list: [{
+					text: "我是数组加载的第一个"
+				}, {
+					text: "我是数组加载的第二个"
+				}, {
+					text: "我是数组加载的第三个"
+				}]
+			}
+		})
+		var app2 = new Vue({
+				el: "#app2",
+				data: {
+					list2: {
+						text1: "我是对象加载的第一个",
+						text2: "我是对象加载的第二个",
+						text3: "我是对象加载的第三个"
+					}
+				}
+			})
+			//数据可以是数组也可以是对象
+	</script>
+
+</html>

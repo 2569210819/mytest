@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{message}}</p>
+			<p>{{reversedMessage}}</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app=new Vue({
+			el:"#app",
+			data:{
+				message:"我会影响下面的计算属性"
+			},
+			computed:{
+				reversedMessage:function(){
+					return this.message.split('').reverse().join('')
+				}
+			}
+			//计算属性最好用，methods也能实现相同的功能，但methods会重复调用，计算属性会有缓存，如果不变就直接加载，响应更快
+		//计算属性用来反转，切换大小写等文本操作
+		})
+	</script>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app="" ng-init="price=1;num=5">
+			<p>总价：{{price*num}}</p>
+			<p>总价：<span ng-bind="price*num"></span></p>
+		</div>
+	</body>
+</html>

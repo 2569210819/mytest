@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+         <div ng-app='app1' ng-controller='ctrl1'>
+         	<p ng-bind='name'></p>
+         </div>		
+		 <div ng-app='app2' ng-controller='ctrl2'>
+         	<p ng-bind='age'></p>
+        </div>		
+	</body>
+	<script type="text/javascript">
+		var app1=angular.module('app1',[]);
+		app1.controller('ctrl1',function($scope){
+			$scope.name='王刚';
+		})
+		var app2=angular.module('app2',[]);
+		app2.controller('ctrl2',function($scope){
+			$scope.age='王刚';
+		})
+	</script>
+</html>

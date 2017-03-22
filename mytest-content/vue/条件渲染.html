@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<h1 v-if="ok">Yes</h1>
+	        <h1 v-else>No</h1>
+        </div>
+        <div id="app2"  >
+        	<div v-on:click="falg()">点击进行切换</div>
+        	<div v-show="isTrue">我是v-show控制的 </div>
+        </div>
+	</body>
+	<script type="text/javascript">
+		var app=new Vue({
+			el:"#app",
+			data:{
+				ok:true
+			}
+		})
+		var app2=new Vue({
+			el:"#app2",
+			data:{
+			    isTrue:true
+			},
+			methods:{
+				falg:function(){
+					if(this.isTrue==true){
+						this.isTrue=false;
+					}else{
+						this.isTrue=true
+					}
+				}
+			}
+		})
+	</script>
+</html>

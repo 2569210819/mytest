@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#app{width:400px;height: 400px;}
+			#app2{width:400px;height: 400px;}
+			#app3{width:400px;height:400px}
+			.active{background: darkblue;}
+			.active2{background: darkcyan;}
+		</style>
+	</head>
+	<body>
+		<div id="app" v-bind:class="objStyle"></div>
+		<div id="app2" v-bind:class="{active:isactive,active2:isactive2}"></div>
+		<div id="app3" v-bind:class="[activeClass,active2Class]"></div>
+		<!--class可以以数组的形式传给html-->
+	</body>
+	<script type="text/javascript">
+		var app=new Vue({
+			el:"#app",
+			data:{
+				objStyle:{
+					'active':true,
+					'active2':false
+				}
+			}
+		})
+		var app2=new Vue({
+			el:"#app2",
+			data:{
+			   'isactive':false,
+			   'isactive2':true
+			}
+		})
+		var app3=new Vue({
+			el:"#app3",
+			data:{
+			   activeClass:'active',
+			   active2Class:'active2'
+			}
+		})
+		//这两种形式具体看项目的需求，
+	</script>
+</html>

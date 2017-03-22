@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	    <style type="text/css">
+	    	#app{width:400px;height: 400px;}
+	    </style>
+	</head>
+	<body>
+		<div id="app" v-bind:style='objStyle'>绑定内联样式</div>
+	</body>
+	<script type="text/javascript">
+		var app=new Vue({
+			el:'#app',
+		    data:{
+		    	objStyle:{
+		    		background:'red',
+		    		color:'#fff'
+		    	}
+		    }
+		})
+	</script>
+</html>

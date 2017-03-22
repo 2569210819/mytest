@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="color" name="mycolor" id="mycolor" value="" />
+	</body>
+	<script type="text/javascript">
+		document.getElementById("mycolor").onchange=function(){
+			var color=document.getElementById("mycolor").value;
+			document.getElementsByTagName("body")[0].style.background=color;
+		}
+	</script>
+</html>

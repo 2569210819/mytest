@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body>
+		<div id="app" v-bind:title="message">鼠标悬浮查看title属性 </div>
+		<a id="app2" v-bind:href="url">点击打开百度</a>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: "#app",
+			data: {
+				message: "这是个title属性"
+			}
+		})
+		var app2=new Vue({
+			el:"#app2",
+			data:{
+				url:"https://www.baidu.com"
+			}
+		})
+		//两个例子，也可以去绑定其他的属性
+		</script>
+
+</html>

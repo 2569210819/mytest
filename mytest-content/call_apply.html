@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script type="text/javascript">
+	var oPerson={};
+	function changeThis(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	changeThis.call(oPerson,"王五",28);
+		console.log(oPerson)
+	changeThis.apply(oPerson,['王刚',24]);
+	console.log(oPerson)
+	//var aArray=[10,5,3,9,7,12];
+	//console.log(Math.min(10,5,3,9,7,12))     //Math.min()获取最小值；
+	//console.log(Math.min.apply(null,aArray))  //可以理解为先进行函数的调用在赋值到指向对象中
+	 //var oPerson=new changeThis('wg',24)
+	//console.log(oPerson)
+</script>
+</body>
+</html>
